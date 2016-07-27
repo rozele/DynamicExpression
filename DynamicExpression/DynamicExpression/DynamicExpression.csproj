@@ -50,7 +50,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chakra\JavaScriptBackgroundWorkItemCallback.cs" />
+    <Compile Include="Chakra\JavaScriptBeforeCollectCallback.cs" />
+    <Compile Include="Chakra\JavaScriptContext.cs" />
+    <Compile Include="Chakra\JavaScriptEngineException.cs" />
+    <Compile Include="Chakra\JavaScriptErrorCode.cs" />
+    <Compile Include="Chakra\JavaScriptException.cs" />
+    <Compile Include="Chakra\JavaScriptFatalException.cs" />
+    <Compile Include="Chakra\JavaScriptMemoryAllocationCallback.cs" />
+    <Compile Include="Chakra\JavaScriptMemoryEventType.cs" />
+    <Compile Include="Chakra\JavaScriptNativeFunction.cs" />
+    <Compile Include="Chakra\JavaScriptObjectFinalizeCallback.cs" />
+    <Compile Include="Chakra\JavaScriptPropertyId.cs" />
+    <Compile Include="Chakra\JavaScriptRuntime.cs" />
+    <Compile Include="Chakra\JavaScriptRuntimeAttributes.cs" />
+    <Compile Include="Chakra\JavaScriptRuntimeVersion.cs" />
+    <Compile Include="Chakra\JavaScriptScriptException.cs" />
+    <Compile Include="Chakra\JavaScriptSourceContext.cs" />
+    <Compile Include="Chakra\JavaScriptThreadServiceCallback.cs" />
+    <Compile Include="Chakra\JavaScriptUsageException.cs" />
+    <Compile Include="Chakra\JavaScriptValue.cs" />
+    <Compile Include="Chakra\JavaScriptValueToJTokenConverter.cs" />
+    <Compile Include="Chakra\JavaScriptValueType.cs" />
+    <Compile Include="Chakra\JTokenToJavaScriptValueConverter.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Chakra\Native.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

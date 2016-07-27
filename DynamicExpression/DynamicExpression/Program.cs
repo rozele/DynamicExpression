@@ -1,4 +1,5 @@
-﻿using Microsoft.CSharp.RuntimeBinder;
+﻿using DynamicExpression.Chakra;
+using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace ConsoleApplication4
     {
         static void Main(string[] args)
         {
+            ChakraTest();
+
             var environment = new Dictionary<string, Expression>
             {
                 { "console.log", Expression.Constant(new Action<object>(Console.WriteLine)) },
@@ -27,6 +30,24 @@ namespace ConsoleApplication4
             var bindings = fvs.Select(p => environment[p.Name]).ToArray();
             var boundExpression = Expression.Invoke(Expression.Lambda(expression, fvs), bindings);
             boundExpression.Evaluate();
+        }
+
+        static void ChakraTest()
+        {
+            var jsrt = JavaScriptRuntime.Create();
+            var ctx = jsrt.CreateContext();
+            JavaScriptContext.Current = ctx;
+
+            try
+            {
+                var res = JavaScriptContext.RunScript("(function() { return 42; })()");
+                var str = res.ConvertToString();
+                Console.WriteLine(str.ToString());
+            }
+            finally
+            {
+                JavaScriptContext.Current = JavaScriptContext.Invalid;
+            }
         }
     }
 
